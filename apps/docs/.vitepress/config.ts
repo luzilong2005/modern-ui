@@ -27,7 +27,6 @@ export default defineConfig({
             next: "下一页",
             prev: "上一页",
         },
-
         sidebar: [
             {
                 base: "/pages/guide/",
