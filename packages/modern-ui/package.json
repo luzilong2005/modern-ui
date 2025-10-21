@@ -40,13 +40,11 @@
         "clean": "rimraf dist",
         "dev": "pnpm run build:esm --watch"
     },
+    "dependencies": {},
     "devDependencies": {
         "vite-bundle-analyzer": "^1.2.3",
         "vite-plugin-compression2": "^2.3.0",
         "vite-plugin-dts": "^4.5.4",
         "vite-plugin-lib-inject-css": "^2.2.2"
-    },
-    "dependencies": {
-
     }
 }
