@@ -54,7 +54,6 @@ export default defineConfig({
                 ],
             },
         ],
-
         socialLinks: [
             { icon: "github", link: "https://github.com/luzilong2005/modern-ui" },
             { icon: "gitee", link: "" },
