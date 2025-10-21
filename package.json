@@ -3,6 +3,7 @@
     "private": true,
     "type": "module",
     "scripts": {
+        "core:build": "pnpm run --filter modern-ui build",
         "core:dev": "pnpm run --filter modern-ui dev",
         "design:dev": "pnpm run --filter @modern-ui/design storybook",
         "docs:build": " pnpm run --filter @modern-ui/docs build",
