@@ -1,1 +1,0 @@
-import{z as e}from"./index.DOkYiQFG.js";import{d as a,c as o,o as r,J as t,k as n}from"./framework.D0bRv6GJ.js";const l=a({__name:"Basics",setup(s){return(c,m)=>(r(),o("div",null,[t(n(e),{value:30})]))}});export{l as default};

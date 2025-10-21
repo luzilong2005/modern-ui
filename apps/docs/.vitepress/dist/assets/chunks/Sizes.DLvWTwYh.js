@@ -1,1 +1,0 @@
-import{a as t,Q as n}from"./index.DOkYiQFG.js";import{d as l,c as s,o as a,G as o,H as c,b as p,k as r}from"./framework.D0bRv6GJ.js";const _={style:{display:"flex",gap:"1rem"}},k=l({__name:"Sizes",setup(i){return(u,m)=>(a(),s("div",_,[(a(!0),s(o,null,c(r(n),e=>(a(),p(r(t),{key:e,size:e,label:e},null,8,["size","label"]))),128))]))}});export{k as default};

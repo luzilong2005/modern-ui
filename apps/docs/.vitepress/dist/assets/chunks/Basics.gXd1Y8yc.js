@@ -1,1 +1,0 @@
-import{y as e}from"./index.DOkYiQFG.js";import{d as t,c as l,o as n,J as o,k as a}from"./framework.D0bRv6GJ.js";const u=t({__name:"Basics",setup(r){return(s,c)=>(n(),l("div",null,[o(a(e),{value:"option1",label:"选项1"}),o(a(e),{value:"option2",label:"选项2"}),o(a(e),{value:"option3",label:"选项3"})]))}});export{u as default};

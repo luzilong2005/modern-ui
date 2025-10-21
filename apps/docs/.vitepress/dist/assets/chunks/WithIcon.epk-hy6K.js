@@ -1,1 +1,0 @@
-import{g as o}from"./index.DOkYiQFG.js";import{d as a,c as r,o as t,J as s,w as n,j as c,k as l}from"./framework.D0bRv6GJ.js";const f=a({__name:"WithIcon",setup(i){return(p,e)=>(t(),r("div",null,[s(l(o),{placeholder:"带图标的输入框"},{prefix:n(()=>[...e[0]||(e[0]=[c("i",{class:"icon-search"},null,-1)])]),_:1})]))}});export{f as default};

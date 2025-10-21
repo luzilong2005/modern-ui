@@ -1,1 +1,0 @@
-import{g as l}from"./index.DOkYiQFG.js";import{d as n,x as t,c as r,o as s,J as u,k as m}from"./framework.D0bRv6GJ.js";const i=n({__name:"Basics",setup(p){const e=t("");return(d,a)=>(s(),r("div",null,[u(m(l),{placeholder:"请输入内容",modelValue:e.value,"onUpdate:modelValue":a[0]||(a[0]=o=>e.value=o)},null,8,["modelValue"])]))}});export{i as default};

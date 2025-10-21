@@ -1,1 +1,0 @@
-import{J as o}from"./index.DOkYiQFG.js";import{d as t,c as s,o as a,j as c}from"./framework.D0bRv6GJ.js";const i=t({__name:"Basics",setup(n){const e=()=>{o.create("这是一条消息提示")};return(r,m)=>(a(),s("div",null,[c("button",{onClick:e},"显示消息")]))}});export{i as default};

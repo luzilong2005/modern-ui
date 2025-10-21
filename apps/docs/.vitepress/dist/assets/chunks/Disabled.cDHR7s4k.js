@@ -1,1 +1,0 @@
-import{N as a}from"./index.DOkYiQFG.js";import{d as o,c as t,o as n,j as s,J as r,k as l}from"./framework.D0bRv6GJ.js";const d={class:"mb-4"},u=o({__name:"Disabled",setup(c){return(i,e)=>(n(),t("div",null,[s("div",d,[e[0]||(e[0]=s("p",null,"禁用状态的滑块",-1)),r(l(a),{value:50,disabled:""})])]))}});export{u as default};

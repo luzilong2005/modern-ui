@@ -1,1 +1,0 @@
-import{J as o}from"./index.DOkYiQFG.js";import{d as t,c as a,o as s,j as n}from"./framework.D0bRv6GJ.js";const _=t({__name:"Closable",setup(c){const e=()=>{o.create({content:"这是一条可关闭的消息，点击右上角的关闭按钮可以关闭它",closable:!0})};return(r,l)=>(s(),a("div",null,[n("button",{onClick:e},"显示可关闭消息")]))}});export{_ as default};
