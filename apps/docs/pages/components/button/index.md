@@ -14,11 +14,11 @@
 ## 基本用法
 <demo vue="./Basics.vue"/>
 
-### Variants 变种
-<demo vue="./Variants.vue"/>
-
 ### Sizes 尺寸
 <demo vue="./Sizes.vue"/>
+
+### Variants 变种
+<demo vue="./Variants.vue"/>
 
 ### Icon 图标
 <demo vue="./Icon.vue"/>
