@@ -2,6 +2,10 @@ import { defineConfig } from "vitepress";
 import { vitepressDemoPlugin } from "vitepress-demo-plugin";
 import { groupIconMdPlugin, groupIconVitePlugin } from "vitepress-plugin-group-icons";
 
+/**
+ * vitepress 配置文件
+ */
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
     base: "/modern-ui/",

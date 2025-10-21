@@ -8,7 +8,8 @@
         "design:dev": "pnpm run --filter @modern-ui/design storybook",
         "docs:build": " pnpm run --filter @modern-ui/docs build",
         "docs:dev": "pnpm run --filter @modern-ui/docs dev",
-        "test-all": "vitest --ui"
+        "test-all": "vitest --ui",
+        "theme:build": "pnpm run --filter @modern-ui/theme build"
     },
     "config": {
         "commitizen": {
