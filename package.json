@@ -1,6 +1,7 @@
 {
     "name": "@modern-ui/workspace",
     "private": true,
+    "type": "module",
     "scripts": {
         "core:dev": "pnpm run --filter modern-ui dev",
         "design:dev": "pnpm run --filter @modern-ui/design storybook",
