@@ -5,7 +5,7 @@ import { groupIconMdPlugin, groupIconVitePlugin } from "vitepress-plugin-group-i
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
     base: "/modern-ui/",
-    title: "Modern UI",
+    title: "Modern UI Docs",
     description: "使用 Vue + Vite + TypeScript 构建的组件库",
     themeConfig: {
         // https://vitepress.dev/reference/default-theme-config
