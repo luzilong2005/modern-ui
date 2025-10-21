@@ -1,0 +1,61 @@
+$sizes: "sm", "md", "lg";
+$size-tokens: "radius", "text-size", "line-height", "height", "padding", "margin", "space";
+
+// prettier-ignore
+$radius-map: (
+    "sm": 0.25rem,  // 4px
+    "md": 0.5rem,   // 8px
+    "lg": 0.75rem   // 12px
+);
+
+// prettier-ignore
+$text-size-map: (
+    "sm": 0.875rem, // 14px
+    "md": 1rem,     // 16px
+    "lg": 1.25rem   // 20px
+);
+
+// prettier-ignore
+$line-height-map: (
+    "sm": 1.25, 
+    "md": 1.5,
+    "lg": 1.75
+);
+
+// prettier-ignore
+$height-map: (
+    "sm": 2rem,    //32px
+    "md": 2.5rem,  // 40px
+    "lg": 3rem     // 48px
+);
+
+// prettier-ignore
+$padding-map: (
+    "sm": 0.5rem,  // 8px
+    "md": 1rem,    // 16px
+    "lg": 1.5rem   // 24px
+);
+
+// prettier-ignore
+$margin-map: (
+    "sm": 0.5rem,  // 8px
+    "md": 1rem,    // 16px
+    "lg": 1.5rem   // 24px
+);
+
+// prettier-ignore
+$space-map:(
+    "sm": 0.5rem,  // 8px
+    "md": 1rem,    // 16px
+    "lg": 1.5rem   // 24px
+);
+
+$size-map: (
+    "radius": $radius-map,
+    "text-size": $text-size-map,
+    "line-height": $line-height-map,
+    "height": $height-map,
+    "padding": $padding-map,
+    "margin": $margin-map,
+    "space": $space-map,
+);

@@ -1,0 +1,52 @@
+{
+    "name": "modern-ui",
+    "private": true,
+    "keywords": [
+        "vue",
+        "typescript",
+        "ui",
+        "components",
+        "library",
+        "modern-ui"
+    ],
+    "author": {
+        "name": "luzilong2005"
+    },
+    "type": "module",
+    "exports": {
+        ".": {
+            "types": "./dist/esm/types/modern-ui/index.d.ts",
+            "import": "./dist/esm/index.js",
+            "require": "./dist/umd/index.js"
+        },
+        "./components": {
+            "types": "./components.d.ts"
+        },
+        "./index.css": "./dist/esm/theme/index.css"
+    },
+    "main": "./dist/esm/index.js",
+    "module": "./dist/esm/index.js",
+    "types": "./dist/esm/types/modern-ui/index.d.ts",
+    "files": [
+        "dist",
+        "./components.d.ts"
+    ],
+    "scripts": {
+        "analyzer:esm": "pnpx vite-bundle-analyzer -c vite.esm.config.ts -o",
+        "analyzer:umd": "pnpx vite-bundle-analyzer -c vite.umd.config.ts -o",
+        "build": "run-s clean build:esm build:umd ",
+        "build:esm": "rimraf dist/esm dist/types && vite build --config vite.esm.config.ts",
+        "build:umd": "rimraf dist/umd && vite build --config vite.umd.config.ts",
+        "clean": "rimraf dist",
+        "dev": "pnpm run build:esm --watch"
+    },
+    "devDependencies": {
+        "vite-bundle-analyzer": "^1.2.3",
+        "vite-plugin-compression2": "^2.3.0",
+        "vite-plugin-dts": "^4.5.4",
+        "vite-plugin-lib-inject-css": "^2.2.2"
+    },
+    "dependencies": {
+
+    }
+}

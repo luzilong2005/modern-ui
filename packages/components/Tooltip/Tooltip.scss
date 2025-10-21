@@ -1,0 +1,39 @@
+@use "@modern-ui/theme/index.scss" as *;
+
+.mu-tooltip {
+    @each $s, $v in $padding-map {
+        --mu-tooltip-padding-#{$s}: #{calc($v * 0.5)};
+    }
+    @each $s, $v in $text-size-map {
+        --mu-tooltip-text-size-#{$s}: #{$v};
+    }
+
+    --mu-tooltip-content-radius: 0.25rem;
+    --mu-tooltip-content-bg-color: #000000;
+    --mu-tooltip-content-text-color: #ffffff;
+
+    @include initial;
+
+    @each $s in $sizes {
+        &.mu-tooltip--size-#{$s} {
+            .mu-tooltip__content {
+                font-size: var(--mu-tooltip-text-size-#{$s});
+                padding: var(--mu-tooltip-padding-#{$s});
+            }
+        }
+    }
+
+    .mu-tooltip__trigger {
+        @include initial;
+        display: inline-block;
+    }
+
+    .mu-tooltip__content {
+        @include initial;
+        border-radius: var(--mu-tooltip-content-radius);
+        color: var(--mu-tooltip-content-text-color);
+        background-color: var(--mu-tooltip-content-bg-color);
+        user-select: text;
+        box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.25);
+    }
+}

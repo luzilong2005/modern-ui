@@ -1,0 +1,18 @@
+{
+    "name": "@modern-ui/theme",
+    "private": true,
+    "type": "module",
+    "exports": {
+        "./index.scss": "./src/scss/index.scss",
+        "./dist/*": "./dist/*",
+        "./scss/*": [
+            "./src/scss/*"
+        ]
+    },
+    "scripts": {
+        "build": "run-s clean build-scss",
+        "build-scss": "sass src/scss/build.scss dist/index.css --no-source-map",
+        "clean": "rimraf dist",
+        "dev": "pnpm run build-scss --watch"
+    }
+}

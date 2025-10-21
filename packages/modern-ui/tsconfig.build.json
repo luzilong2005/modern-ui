@@ -1,0 +1,15 @@
+{
+    "extends": ["@modern-ui/config/tsconfig-app"],
+    "compilerOptions": {
+        "moduleResolution": "bundler",
+        "allowImportingTsExtensions": true,
+        "resolveJsonModule": true,
+        "removeComments": true,
+        "isolatedModules": true,
+        "noEmit": true,
+        "jsx": "preserve",
+        "jsxImportSource": "vue"
+    },
+    "include": ["../../env.d.ts", "./index.ts", "../components/**/*.{ts,vue}"],
+    "exclude": ["**/*.{test,spec}.*"]
+}

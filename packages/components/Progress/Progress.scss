@@ -1,0 +1,54 @@
+@use "@modern-ui/theme/index.scss" as *;
+.mu-progress {
+    @each $s, $v in $height-map {
+        --mu-progress-height-#{$s}: #{calc($v / 4)};
+    }
+
+    --mu-progress-radius: calc(infinity * 1px);
+    --mu-progress-bg-color: var(--mu-color-gray-3);
+    --mu-progress-bar-bg-color: var(--mu-color-primary);
+    --mu-progress-percent-value: ;
+
+    @include initial;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    background-color: var(--mu-progress-bg-color);
+    border-radius: var(--mu-progress-radius);
+    overflow: hidden;
+
+    @each $s in $sizes {
+        &.mu-progress--size-#{$s} {
+            &.mu-progress--horizontal {
+                height: var(--mu-progress-height-#{$s});
+            }
+
+            &.mu-progress--vertical {
+                width: var(--mu-progress-height-#{$s});
+            }
+        }
+    }
+
+    &.mu-progress--horizontal {
+        width: 100%;
+        .mu-progress__bar {
+            width: calc(var(--mu-progress-percent-value) * 1%);
+            height: 100%;
+        }
+    }
+
+    &.mu-progress--vertical {
+        height: 100%;
+        align-items: end;
+        .mu-progress__bar {
+            width: 100%;
+            height: calc(var(--mu-progress-percent-value) * 1%);
+        }
+    }
+
+    .mu-progress__bar {
+        @include initial;
+        display: inline-block;
+        background-color: var(--mu-progress-bar-bg-color);
+    }
+}

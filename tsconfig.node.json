@@ -1,0 +1,5 @@
+{
+    "extends": ["@modern-ui/config/tsconfig-node"],
+    "compilerOptions": {},
+    "include": ["**/*.config.ts"],
+}

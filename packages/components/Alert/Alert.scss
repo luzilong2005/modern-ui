@@ -1,0 +1,78 @@
+@use "@modern-ui/theme/index.scss" as *;
+.mu-alert {
+    --mu-alert-radius: var(--mu-radius-md);
+    --mu-alert-padding: var(--mu-padding-md);
+    --mu-alert-icon-size: 1.2rem;
+    --mu-alert-title-text-size: var(--mu-text-size-md);
+    --mu-alert-context-text-size: var(--mu-text-size-md);
+    @include initial;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    padding: var(--mu-alert-padding);
+    border-radius: var(--mu-alert-radius);
+    overflow: hidden;
+    row-gap: var(--mu-space-md);
+
+    @each $c in "primary", "secondary", "success", "warning", "danger" {
+        &.mu-alert--color-#{$c} {
+            &.mu-alert--variant-filled {
+                background-color: var(--mu-color-#{$c});
+                color: var(--mu-color-white);
+            }
+            &.mu-alert--variant-outlined {
+                background-color: transparent;
+                border: 1px solid var(--mu-color-#{$c});
+                color: var(--mu-color-#{$c});
+                .mu-alert__main__content {
+                    color: var(--mu-color-black);
+                }
+            }
+        }
+    }
+
+    .mu-alert__header {
+        @include initial;
+        display: inline-flex;
+        align-items: center;
+        justify-content: start;
+        column-gap: var(--mu-space-md);
+        .mu-alert__header__title-icon {
+            @include initial;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: var(--mu-alert-icon-size);
+            height: var(--mu-alert-icon-size);
+        }
+
+        .mu-alert__header__title {
+            @include initial;
+            user-select: text;
+            font-weight: 500;
+            font-size: var(--mu-alert-title-text-size);
+        }
+
+        .mu-alert__header__close-icon {
+            @include initial;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: auto;
+            width: var(--mu-alert-icon-size);
+            height: var(--mu-alert-icon-size);
+            cursor: pointer;
+        }
+    }
+
+    .mu-alert__main {
+        @include initial;
+        display: block;
+
+        .mu-alert__main__content {
+            @include initial;
+            user-select: text;
+            font-size: var(--mu-alert-context-text-size);
+        }
+    }
+}

@@ -1,0 +1,5 @@
+@use "@modern-ui/theme/index.scss" as *;
+
+.mu-radio-group {
+    @include initial;
+}

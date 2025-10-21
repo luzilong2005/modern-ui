@@ -1,0 +1,66 @@
+@use "@modern-ui/theme/index.scss" as *;
+.mu-input {
+    @each $s, $v in $height-map {
+        --mu-input-height-#{$s}: #{$v};
+    }
+
+    @each $s, $v in $padding-map {
+        --mu-input-padding-#{$s}: #{calc($v / 2)};
+    }
+
+    @each $s, $v in $text-size-map {
+        --mu-input-text-size-#{$s}: #{$v};
+    }
+
+    --mu-input-radius: var(--mu-radius-md);
+    --mu-input-caret-color: var(--mu-color-primary);
+    --mu-input-border-color: var(--mu-color-gray-4);
+
+    @include initial;
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--mu-input-border-color);
+    border-radius: var(--mu-input-radius);
+
+    @each $s in $sizes {
+        &.mu-input--size-#{$s} {
+            height: var(--mu-input-height-#{$s});
+            input {
+                font-size: var(--mu-input-text-size-#{$s});
+            }
+            &:not(:has(.mu-input__prefix)) {
+                padding-left: var(--mu-input-padding-#{$s});
+            }
+            &:not(:has(.mu-input__suffix)) {
+                padding-right: var(--mu-input-padding-#{$s});
+            }
+            .mu-input__prefix,
+            .mu-input__suffix {
+                min-width: var(--mu-input-height-#{$s});
+            }
+        }
+    }
+
+    &:focus-within {
+        border-color: var(--mu-color-primary);
+    }
+
+    input {
+        @include initial;
+        display: flex;
+        flex: 1;
+        height: 100%;
+        caret-color: var(--mu-input-caret-color);
+    }
+
+    .mu-input__prefix,
+    .mu-input__suffix {
+        @include initial;
+        display: inline-flex;
+        align-items: center;
+        align-self: center;
+        justify-content: center;
+        flex-shrink: 0;
+        
+    }
+}

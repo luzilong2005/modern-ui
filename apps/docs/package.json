@@ -1,0 +1,17 @@
+{
+  "name": "@modern-ui/docs",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
+  },
+  "devDependencies": {
+    "vitepress": "2.0.0-alpha.12"
+  },
+  "dependencies": {
+    "vitepress-demo-plugin": "^1.5.0",
+    "vitepress-plugin-group-icons": "^1.6.4"
+  }
+}

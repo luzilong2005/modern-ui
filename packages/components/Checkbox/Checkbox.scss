@@ -1,0 +1,128 @@
+@use "@modern-ui/theme/index.scss" as *;
+.mu-checkbox {
+    @each $s, $v in $height-map {
+        --mu-checkbox-height-#{$s}: #{calc($v * 0.5)};
+    }
+
+    @each $s, $v in $text-size-map {
+        --mu-checkbox-text-size-#{$s}: #{calc($v * 0.75)};
+    }
+
+    --mu-checkbox-check-color: var(--mu-color-white);
+    --mu-checkbox-border-color: var(--mu-color-gray-5);
+    --mu-checkbox-border-color-disabled: var(--mu-color-gray-4);
+    --mu-checkbox-bg-color: transparent;
+    --mu-checkbox-bg-color-disabled: var(--mu-color-gray-3);
+    --mu-checkbox-bg-color-checked: var(--mu-color-primary);
+    --mu-checkbox-bg-color-checked-disabled: var(--mu-color-primary-disabled);
+    --mu-checkbox-text-color: var(--mu-color-black);
+    --mu-checkbox-text-color-disabled: var(--mu-color-gray-5);
+
+    @include initial;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    align-self: start;
+    gap: 0.75rem;
+    cursor: pointer;
+    position: relative;
+
+    .mu-checkbox__wrapper,
+    .mu-checkbox__input,
+    .mu-checkbox__check,
+    .mu-checkbox__check-icon,
+    .mu-checkbox__label {
+        @include initial;
+    }
+
+    @each $s in $sizes {
+        &.mu-checkbox--size-#{$s} {
+            .mu-checkbox__wrapper,
+            .mu-checkbox__wrapper > .mu-checkbox__check {
+                width: var(--mu-checkbox-height-#{$s});
+                height: var(--mu-checkbox-height-#{$s});
+            }
+            .mu-checkbox__label {
+                font-size: var(--mu-checkbox-text-size-#{$s});
+            }
+        }
+    }
+
+    &.mu-checkbox--disabled {
+        cursor: not-allowed;
+        .mu-checkbox__input,
+        .mu-checkbox__label {
+            cursor: not-allowed;
+        }
+        .mu-checkbox__input {
+            border-color: var(--mu-checkbox-border-color-disabled);
+            background-color: var(--mu-checkbox-bg-color-disabled);
+        }
+        &.mu-checkbox--checked {
+            .mu-checkbox__input {
+                background-color: var(--mu-checkbox-bg-color-checked-disabled);
+            }
+        }
+        .mu-checkbox__label {
+            color: var(--mu-checkbox-text-color-disabled);
+        }
+    }
+
+    &.mu-checkbox__label--left {
+        flex-direction: row-reverse;
+    }
+    &.mu-checkbox__label--right {
+        flex-direction: row;
+    }
+
+    &.mu-checkbox--checked {
+        .mu-checkbox__wrapper {
+            .mu-checkbox__input {
+                border: none;
+                background-color: var(--mu-checkbox-bg-color-checked);
+                &::before {
+                    opacity: 1;
+                }
+            }
+            .mu-checkbox__check {
+                opacity: 1;
+            }
+        }
+    }
+
+    .mu-checkbox__wrapper {
+        position: relative;
+        display: inline-flex;
+        .mu-checkbox__input {
+            display: block;
+            overflow: hidden;
+            appearance: none;
+            border: 1px solid var(--mu-checkbox-border-color);
+            border-radius: var(--mu-radius-sm);
+            background-color: var(--mu-checkbox-bg-color);
+            aspect-ratio: 1/1;
+        }
+
+        .mu-checkbox__check {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            left: 0;
+            top: 0;
+            pointer-events: none;
+            opacity: 0;
+
+            .mu-checkbox__check-icon {
+                color: var(--mu-checkbox-check-color);
+                transform: scale(0.85);
+            }
+        }
+    }
+
+    .mu-checkbox__label {
+        display: inline-flex;
+        align-items: center;
+        color: var(--mu-checkbox-text-color);
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "extends": ["@modern-ui/config/tsconfig-app"],
+    "compilerOptions": {
+        "types": ["vite/client", "modern-ui/components"],
+        "jsx": "preserve",
+        "jsxImportSource": "vue"
+    },
+    "include": [
+        "./apps/docs/**/*.vue",
+        "./apps/design/**/*",
+        "./packages/components/**/*",
+        "./packages/modern-ui/index.ts",
+        "./packages/utils/**/*",
+        "./env.d.ts"
+    ]
+}

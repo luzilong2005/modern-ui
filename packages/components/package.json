@@ -1,0 +1,9 @@
+{
+    "name": "@modern-ui/components",
+    "private": true,
+    "dependencies": {
+        "@floating-ui/vue": "^1.1.9",
+        "@vueuse/core": "^13.9.0",
+        "nanoid": "^5.1.6"
+    }
+}

@@ -1,0 +1,88 @@
+@use "sass:map";
+@use "sass:list";
+@use "./sizes.scss" as *;
+@use "./colors.scss" as *;
+
+$prefix-name: "mu";
+$color-steps: 10;
+
+:root {
+    @each $key, $_map in $size-map {
+        $current: $_map;
+        @each $size, $value in $_map {
+            --#{$prefix-name}-#{$key}-#{$size}: #{$value};
+        }
+        --#{$prefix-name}-#{$key}: #{map.get($current, "md")};
+    }
+
+    --#{$prefix-name}-color-white: #ffffff;
+    --#{$prefix-name}-color-black: #000000;
+    @each $name, $values in $color-map {
+        @for $i from 0 through $color-steps {
+            @if ($i == 0) {
+                --#{$prefix-name}-color-#{''+$name}: #{list.nth($values, 6)};
+            } @else {
+                --#{$prefix-name}-color-#{''+$name}-#{$i}: #{list.nth($values, $i)};
+            }
+        }
+    }
+
+    $semantic-color-map: (
+        "primary": (
+            "base-color": "blue",
+            "status-map": (
+                "default": 6,
+                "hover": 5,
+                "active": 7,
+                "disabled": 4,
+            ),
+        ),
+        "secondary": (
+            "base-color": "gray",
+            "status-map": (
+                "default": 6,
+                "hover": 5,
+                "active": 7,
+                "disabled": 4,
+            ),
+        ),
+        "success": (
+            "base-color": "green",
+            "status-map": (
+                "default": 6,
+                "hover": 5,
+                "active": 7,
+                "disabled": 4,
+            ),
+        ),
+        "danger": (
+            "base-color": "red",
+            "status-map": (
+                "default": 6,
+                "hover": 5,
+                "active": 7,
+                "disabled": 4,
+            ),
+        ),
+        "warning": (
+            "base-color": "yellow",
+            "status-map": (
+                "default": 6,
+                "hover": 5,
+                "active": 7,
+                "disabled": 4,
+            ),
+        ),
+    );
+
+    @each $token, $m in $semantic-color-map {
+        @each $status, $index in map.get($m, "status-map") {
+            @if ($status == "default") {
+                --#{$prefix-name}-color-#{$token}: var(--#{$prefix-name}-color-#{$token}-default);
+            }
+            --#{$prefix-name}-color-#{$token}-#{$status}: var(
+                --#{$prefix-name}-color-#{map.get($m, "base-color")}-#{$index}
+            );
+        }
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "extends": ["@tsconfig/recommended/tsconfig.json"],
+    "compilerOptions": {
+        "noEmit": true,
+        "target": "esnext",
+        "module": "preserve",
+        "moduleResolution": "bundler",
+        "allowImportingTsExtensions": true,
+        "strict": true
+    }
+}

@@ -1,0 +1,165 @@
+@use "@modern-ui/theme/index.scss" as *;
+.mu-button {
+    @each $s, $v in $text-size-map {
+        --mu-button-text-size-#{$s}: #{$v};
+    }
+
+    @each $s, $v in $height-map {
+        --mu-button-height-#{$s}: #{$v};
+    }
+
+    @each $s, $v in $padding-map {
+        --mu-button-padding-x-#{$s}: #{$v};
+    }
+
+    @each $s, $v in $space-map {
+        --mu-button-space-#{$s}: #{$v};
+    }
+
+    --mu-button-radius: var(--mu-radius-sm);
+    --mu-button-text-weight: 500;
+    --mu-button-border-style: solid;
+
+    @include initial;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-width: 0;
+    border-style: var(--mu-button-border-style);
+    font-weight: var(--mu-button-text-weight);
+
+    .mu-button__default-section,
+    .mu-button__left-section,
+    .mu-button__right-section {
+        @include initial;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+
+    &.mu-button--block {
+        display: flex;
+        width: 100%;
+    }
+
+    &.mu-button--shape-square {
+        border-radius: var(--mu-button-radius);
+    }
+
+    &.mu-button--shape-circle {
+        border-radius: 50%;
+    }
+
+    &.mu-button--disabled {
+        cursor: not-allowed;
+    }
+
+    &.mu-button--icon {
+        aspect-ratio: 1/1;
+        .mu-button__icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    @each $s in $sizes {
+        &.mu-button--size-#{$s} {
+            font-size: var(--mu-button-text-size-#{$s});
+            height: var(--mu-button-height-#{$s});
+            gap: var(--mu-button-space-#{$s});
+            &:not(.mu-button--icon) {
+                padding-inline: var(--mu-button-padding-x-#{$s});
+            }
+
+            .mu-button__icon {
+                width: calc(var(--mu-button-height-#{$s}) / 2);
+                height: calc(var(--mu-button-height-#{$s}) / 2);
+            }
+        }
+    }
+
+    @each $name in $semantic-colors {
+        &.mu-button--color-#{$name} {
+            &.mu-button--variant-basic {
+                border: 1px solid var(--mu-color-gray-4);
+                &:not(:disabled):hover {
+                    background-color: var(--mu-color-gray-1);
+                }
+                &:not(:disabled):active {
+                    background-color: var(--mu-color-gray-2);
+                }
+            }
+            &.mu-button--variant-filled {
+                color: var(--mu-color-white);
+                background-color: var(--mu-color-#{$name});
+                &:not(:disabled):hover {
+                    background-color: var(--mu-color-#{$name}-hover);
+                }
+                &:not(:disabled):active {
+                    background-color: var(--mu-color-#{$name}-active);
+                }
+                &:disabled {
+                    background-color: var(--mu-color-#{$name}-disabled);
+                }
+            }
+            &.mu-button--variant-outlined {
+                border: 1px solid var(--mu-color-#{$name});
+                color: var(--mu-color-#{$name});
+                &:not(:disabled):hover {
+                    border-color: var(--mu-color-#{$name}-hover);
+                    color: var(--mu-color-#{$name}-hover);
+                }
+                &:not(:disabled):active {
+                    border-color: var(--mu-color-#{$name}-active);
+                    color: var(--mu-color-#{$name}-active);
+                }
+                &:disabled {
+                    border-color: var(--mu-color-#{$name}-disabled);
+                    color: var(--mu-color-#{$name}-disabled);
+                }
+            }
+            &.mu-button--variant-ghost {
+                color: var(--mu-color-#{$name});
+                background-color: color-mix(in srgb, var(--mu-color-#{$name}), white 80%);
+                &:not(:disabled):hover {
+                    background-color: color-mix(in srgb, var(--mu-color-#{$name}-hover), white 80%);
+                }
+                &:not(:disabled):active {
+                    background-color: color-mix(in srgb, var(--mu-color-#{$name}-active), white 80%);
+                }
+                &:disabled {
+                    background-color: color-mix(in srgb, var(--mu-color-#{$name}-disabled), white 80%);
+                }
+            }
+            &.mu-button--variant-text {
+                color: var(--mu-color-#{$name});
+                &:not(:disabled):hover {
+                    color: var(--mu-color-#{$name}-hover);
+                }
+                &:not(:disabled):active {
+                    color: var(--mu-color-#{$name}-active);
+                }
+                &:disabled {
+                    color: var(--mu-color-#{$name}-disabled);
+                }
+            }
+            &.mu-button--variant-light {
+                color: var(--mu-color-#{$name});
+                &:not(:disabled):hover {
+                    color: var(--mu-color-#{$name}-hover);
+                    background-color: color-mix(in srgb, var(--mu-color-#{$name}), white 90%);
+                }
+                &:not(:disabled):active {
+                    color: var(--mu-color-#{$name}-active);
+                    background-color: color-mix(in srgb, var(--mu-color-#{$name}), white 80%);
+                }
+                &:disabled {
+                    color: var(--mu-color-#{$name}-disabled);
+                }
+            }
+        }
+    }
+}

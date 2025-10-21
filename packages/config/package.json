@@ -1,0 +1,15 @@
+{
+    "name": "@modern-ui/config",
+    "private": true,
+    "exports": {
+        "./tsconfig/*": "./tsconfig/*",
+        "./tsconfig-app": "./tsconfig/tsconfig.app.json",
+        "./tsconfig-node": "./tsconfig/tsconfig.node.json",
+        "./tsconfig-base": "./tsconfig/tsconfig.base.json"
+    },
+    "devDependencies": {
+        "@tsconfig/node22": "^22.0.2",
+        "@tsconfig/recommended": "^1.0.10",
+        "@vue/tsconfig": "^0.7.0"
+    }
+}

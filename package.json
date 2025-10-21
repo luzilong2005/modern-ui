@@ -1,0 +1,52 @@
+{
+    "name": "@modern-ui/workspace",
+    "private": true,
+    "scripts": {
+        "core:dev": "pnpm run --filter modern-ui dev",
+        "design:dev": "pnpm run --filter @modern-ui/design storybook",
+        "docs:dev": "pnpm run --filter @modern-ui/docs dev",
+        "test-all": "vitest --ui"
+    },
+    "config": {
+        "commitizen": {
+            "path": "node_modules/cz-git",
+            "useEmoji": true
+        }
+    },
+    "dependencies": {
+        "@modern-ui/components": "workspace:*",
+        "@modern-ui/config": "workspace:*",
+        "@modern-ui/theme": "workspace:*",
+        "@modern-ui/utils": "workspace:*",
+        "es-toolkit": "^1.40.0",
+        "lucide-vue-next": "^0.544.0",
+        "modern-ui": "workspace:*",
+        "vue": "^3.5.22"
+    },
+    "devDependencies": {
+        "@trivago/prettier-plugin-sort-imports": "^5.2.2",
+        "@types/node": "^24.8.1",
+        "@vitejs/plugin-vue": "^6.0.1",
+        "@vitejs/plugin-vue-jsx": "^5.1.1",
+        "@vitest/ui": "^3.2.4",
+        "@vue/test-utils": "^2.4.6",
+        "happy-dom": "^20.0.5",
+        "npm-run-all2": "^8.0.4",
+        "prettier": "^3.6.2",
+        "prettier-plugin-merge": "^0.8.0",
+        "prettier-plugin-organize-attributes": "^1.0.0",
+        "prettier-plugin-organize-imports": "^4.3.0",
+        "prettier-plugin-packagejson": "^2.5.19",
+        "rimraf": "^6.0.1",
+        "sass": "^1.93.2",
+        "typescript": "^5.9.3",
+        "vite": "^7.1.10",
+        "vitest": "^3.2.4"
+    },
+    "packageManager": "pnpm@10.18.3",
+    "engines": {
+        "node": "^22",
+        "pnpm": "^10.18.0",
+        "vscode": "^1.104.2"
+    }
+}

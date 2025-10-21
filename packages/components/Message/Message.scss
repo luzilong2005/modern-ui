@@ -1,0 +1,70 @@
+@use "@modern-ui/theme/index.scss" as *;
+
+.mu-message-fade-up-enter-active,
+.mu-message-fade-up-leave-active {
+    transition: all 0.3s ease;
+}
+.mu-message-fade-up-enter-from {
+    opacity: 0;
+    transform: translateY(-100%);
+}
+.mu-message-fade-up-leave-to {
+    opacity: 0;
+    transform: translateY(-100%);
+}
+
+.mu-message-container {
+    @include initial;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: calc(infinity * 1);
+}
+
+.mu-message {
+    @include initial;
+    margin-top: 1rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--mu-color-white);
+    border-radius: var(--mu-radius-sm);
+    overflow: hidden;
+    padding: var(--mu-padding-sm);
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
+    gap: var(--mu-space-sm);
+    .mu-message__icon,
+    .mu-message__content,
+    .mu-message__close {
+        @include initial;
+    }
+
+    .mu-message__icon,
+    .mu-message__close {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .mu-message__close {
+        cursor: pointer;
+    }
+
+    .mu-message__content {
+        user-select: text;
+        font-size: var(--mu-text-size-md);
+        color: var(--mu-color-black);
+    }
+
+    @each $color in $semantic-colors {
+        &.mu-message--type-#{$color} {
+            .mu-message__icon {
+                color: var(--mu-color-#{$color});
+            }
+        }
+    }
+}

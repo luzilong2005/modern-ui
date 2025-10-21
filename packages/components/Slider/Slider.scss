@@ -1,0 +1,86 @@
+@use "@modern-ui/theme/index.scss" as *;
+
+.mu-slider {
+    @each $s, $v in $height-map {
+        --mu-slider-height-#{$s}: #{calc($v / 4)};
+    }
+
+    --mu-slider-bar-color: var(--mu-color-primary);
+    --mu-slider-bar-color-disabled: var(--mu-color-primary-disabled);
+    --mu-slider-track-color: var(--mu-color-gray-3);
+    --mu-slider-thumb-color: var(--mu-color-white);
+    --mu-slider-thumb-border-color: var(--mu-color-primary);
+    --mu-slider-thumb-border-color-disabled: var(--mu-color-primary-disabled);
+    --mu-slider-percent: 0;
+
+    @include initial;
+    display: inline-flex;
+    align-self: center;
+    width: 100%;
+    cursor: pointer;
+
+    @each $s in $sizes {
+        &.mu-slider--size-#{$s} {
+            .mu-slider__track {
+                height: var(--mu-slider-height-#{$s});
+            }
+            .mu-slider__thumb {
+                height: calc(var(--mu-slider-height-#{$s}) * 2);
+            }
+        }
+    }
+
+    &.mu-slider--disabled {
+        cursor: not-allowed;
+        .mu-slider__thumb,
+        .mu-slider__track,
+        .mu-slider__track::before {
+            cursor: not-allowed;
+        }
+
+        .mu-slider__thumb{
+            border-color: var(--mu-slider-thumb-border-color-disabled);
+        }
+        .mu-slider__track::before {
+            background-color: var(--mu-slider-bar-color-disabled);
+        }
+    }
+
+    .mu-slider__thumb,
+    .mu-slider__track,
+    .mu-slider__track::before {
+        @include initial;
+        cursor: pointer;
+    }
+
+    .mu-slider__track {
+        @include initial;
+        position: relative;
+        display: flex;
+        width: 100%;
+        border-radius: calc(infinity * 1px);
+        background-color: var(--mu-slider-track-color);
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: calc(var(--mu-slider-percent) * 1%);
+            background-color: var(--mu-slider-bar-color);
+            border-radius: inherit;
+        }
+    }
+
+    .mu-slider__thumb {
+        position: absolute;
+        top: 50%;
+        left: calc(var(--mu-slider-percent) * 1%);
+        aspect-ratio: 1/1;
+        transform: translate(-50%, -50%);
+        background-color: var(--mu-slider-thumb-color);
+        border: 4px solid var(--mu-slider-thumb-border-color);
+        border-radius: 50%;
+    }
+}

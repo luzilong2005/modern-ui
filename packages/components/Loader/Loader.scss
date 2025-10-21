@@ -1,0 +1,19 @@
+@use "@modern-ui/theme/index.scss" as *;
+.mu-loader {
+    --mu-loader-size: 1;
+    --mu-loader-scale: 1;
+
+    @include initial;
+    display: inline-flex;
+    position: relative;
+
+    .mu-loader__spinner {
+        @include initial;
+        display: inline-flex;
+        flex-shrink: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(calc(var(--mu-loader-scale) * var(--mu-loader-size)));
+    }
+}

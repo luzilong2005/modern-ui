@@ -1,0 +1,108 @@
+@use "@modern-ui/theme/index.scss" as *;
+
+.mu-switch {
+    @each $s, $v in $height-map {
+        --mu-switch-height-#{$s}: #{calc($v * 0.5)};
+    }
+
+    @each $s, $v in $text-size-map {
+        --mu-switch-text-size-#{$s}: #{calc($v * 0.75)};
+    }
+
+    --mu-switch-bg-color: var(--mu-color-gray-4);
+    --mu-switch-bg-color-disabled: var(--mu-color-gray-3);
+    --mu-switch-bg-color-checked: var(--mu-color-primary);
+    --mu-switch-bg-color-checked-disabled: var(--mu-color-primary-disabled);
+    --mu-switch-thumb-color: var(--mu-color-white);
+    --mu-switch-label-text-color: var(--mu-color-black);
+    --mu-switch-label-text-color-disabled: var(--mu-color-gray-5);
+
+    @include initial;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    align-self: start;
+    gap: 0.75rem;
+
+    .mu-switch__input,
+    .mu-switch__label {
+        cursor: pointer;
+    }
+
+    &.mu-switch--disabled {
+        cursor: not-allowed;
+        .mu-switch__input,
+        .mu-switch__label {
+            cursor: not-allowed;
+        }
+        .mu-switch__input {
+            background-color: var(--mu-switch-bg-color-disabled);
+            &:checked {
+                background-color: var(--mu-switch-bg-color-checked-disabled);
+            }
+        }
+        .mu-switch__label {
+            color: var(--mu-switch-label-text-color-disabled);
+        }
+    }
+
+    @each $s in $sizes {
+        &.mu-switch--size-#{$s} {
+            height: var(--mu-switch-height-#{$s});
+
+            .mu-switch__input {
+                height: var(--mu-switch-height-#{$s});
+                &::before {
+                    height: var(--mu-switch-height-#{$s});
+                }
+            }
+
+            .mu-switch__label {
+                font-size: var(--mu-switch-text-size-#{$s});
+            }
+        }
+    }
+
+    .mu-switch__input {
+        @include initial;
+        position: relative;
+        display: block;
+        appearance: none;
+        aspect-ratio: 2/1;
+        border-radius: calc(infinity * 1px);
+        background-color: var(--mu-switch-bg-color);
+
+        &::before {
+            content: "";
+            position: absolute;
+            display: block;
+            aspect-ratio: 1/1;
+            border-radius: 50%;
+            background-color: var(--mu-switch-thumb-color);
+            transform: scale(0.8);
+            transition: all 0.2s ease-in-out;
+        }
+
+        &:checked {
+            background-color: var(--mu-switch-bg-color-checked);
+            &::before {
+                transform: translateX(100%) scale(0.8);
+            }
+        }
+    }
+
+    .mu-switch__label {
+        @include initial;
+        display: inline-flex;
+        align-items: center;
+        color: var(--mu-switch-label-text-color);
+    }
+
+    &.mu-switch--label-right {
+        flex-direction: row;
+    }
+
+    &.mu-switch--label-left {
+        flex-direction: row-reverse;
+    }
+}
