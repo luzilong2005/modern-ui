@@ -1,0 +1,1 @@
+import{b as o}from"./index.DOkYiQFG.js";import{d as s,x as t,c as n,o as r,j as u,J as d,t as m,k as p}from"./framework.D0bRv6GJ.js";const V=s({__name:"Basics",setup(c){const e=t(!1);return(i,a)=>(r(),n("div",null,[u("p",null,"当前状态: "+m(e.value),1),d(p(o),{modelValue:e.value,"onUpdate:modelValue":a[0]||(a[0]=l=>e.value=l)},null,8,["modelValue"])]))}});export{V as default};

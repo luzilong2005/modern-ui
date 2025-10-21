@@ -1,0 +1,1 @@
+import{g as e}from"./index.DOkYiQFG.js";import{d as a,c as o,o as r,J as t,k as n}from"./framework.D0bRv6GJ.js";const m=a({__name:"Disabled",setup(s){return(c,l)=>(r(),o("div",null,[t(n(e),{placeholder:"禁用状态",disabled:""})]))}});export{m as default};

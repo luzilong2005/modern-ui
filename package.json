@@ -4,6 +4,7 @@
     "scripts": {
         "core:dev": "pnpm run --filter modern-ui dev",
         "design:dev": "pnpm run --filter @modern-ui/design storybook",
+        "docs:build": " pnpm run --filter @modern-ui/docs build",
         "docs:dev": "pnpm run --filter @modern-ui/docs dev",
         "test-all": "vitest --ui"
     },

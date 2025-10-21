@@ -1,0 +1,1 @@
+import{a as e}from"./index.DOkYiQFG.js";import{d as l,c as o,o as r,J as a,k as t}from"./framework.D0bRv6GJ.js";const m=l({__name:"Disabled",setup(s){return(c,d)=>(r(),o("div",null,[a(t(e),{label:"未选中的禁用状态",disabled:""}),a(t(e),{label:"选中的禁用状态",disabled:"","default-checked":!0})]))}});export{m as default};

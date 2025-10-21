@@ -1,0 +1,1 @@
+import{a as e}from"./index.DOkYiQFG.js";import{d as o,c as r,o as s,J as a,k as t}from"./framework.D0bRv6GJ.js";const l={style:{display:"flex",gap:"1rem"}},m=o({__name:"WithLabel",setup(c){return(n,p)=>(s(),r("div",l,[a(t(e),{label:"HTML"}),a(t(e),{label:"CSS"}),a(t(e),{label:"JavaScript"})]))}});export{m as default};

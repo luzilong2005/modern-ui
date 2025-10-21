@@ -1,0 +1,1 @@
+import{q as t}from"./index.DOkYiQFG.js";import{d as a,c as o,o as r,J as s,w as n,a as l,k as c}from"./framework.D0bRv6GJ.js";const f=a({__name:"Basics",setup(m){return(p,e)=>(r(),o("div",null,[s(c(t),null,{default:n(()=>[...e[0]||(e[0]=[l("这是一条基本提示信息",-1)])]),_:1})]))}});export{f as default};

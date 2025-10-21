@@ -1,0 +1,1 @@
+import{q as t}from"./index.DOkYiQFG.js";import{d as a,c as s,o as l,J as n,w as r,a as c,k as d}from"./framework.D0bRv6GJ.js";const _=a({__name:"Closable",setup(m){const o=()=>{console.log("Alert已关闭")};return(p,e)=>(l(),s("div",null,[n(d(t),{closable:"",onClose:o},{default:r(()=>[...e[0]||(e[0]=[c("这是一条可关闭的提示信息",-1)])]),_:1})]))}});export{_ as default};

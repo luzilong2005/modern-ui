@@ -1,0 +1,1 @@
+import{c as t}from"./index.DOkYiQFG.js";import{d as o,c as a,o as n,J as s,w as r,j as c,k as l}from"./framework.D0bRv6GJ.js";const f=o({__name:"Basics",setup(u){return(m,e)=>(n(),a("div",null,[s(l(t),{content:"这是一个工具提示"},{default:r(()=>[...e[0]||(e[0]=[c("button",null,"悬停显示提示",-1)])]),_:1})]))}});export{f as default};
