@@ -30,6 +30,7 @@ const props = withDefaults(defineProps<SliderProps>(), sliderDefaultProps);
 const modelValue = defineModel<number>("value", { default: sliderDefaultProps.value });
 const ratio = computed(() => modelValue.value / props.max);
 const percent = computed(() => ratio.value * 100);
+const step = computed(() => (props.step <= 0 ? sliderDefaultProps.step : props.step));
 const className = computed(() => ({
     [`mu-slider`]: true,
     [`mu-slider--size-${props.size}`]: !!props.size,
@@ -46,12 +47,12 @@ const updateValue = (x: number, y: number) => {
     if (props.direction === "horizontal") {
         const { left, width } = trackRef.value.getBoundingClientRect();
         const raw = clamp((x - left) / width, 0, 1);
-        const val = clamp(Math.round(raw * props.max / props.step) * props.step, 0, props.max);
+        const val = clamp(Math.round((raw * props.max) / step.value) * step.value, 0, props.max);
         modelValue.value = val;
     } else if (props.direction === "vertical") {
         const { top, height } = trackRef.value.getBoundingClientRect();
         const raw = clamp((y - top) / height, 0, 1);
-        const val = clamp(Math.round(raw * props.max / props.step) * props.step, 0, props.max);
+        const val = clamp(Math.round((raw * props.max) / step.value) * step.value, 0, props.max);
         modelValue.value = val;
     }
 };

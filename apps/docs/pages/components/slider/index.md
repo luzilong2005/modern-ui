@@ -27,5 +27,5 @@
 | max       | `number`           | `100`     | 滑块最大值               |
 | value     | `number`           | `0`       | 滑块当前值（v-model绑定）    |
 | direction | `SliderDirection`  | `horizontal` | 滑块方向，可选值为 `horizontal`、`vertical` |
-| step      | `number`           | `1`       | 滑块步长，值必须是此值的倍数    |
+| step      | `number`           | `1`       | 滑块步长    |
 | disabled  | `boolean`          | `false`   | 是否禁用                 |
