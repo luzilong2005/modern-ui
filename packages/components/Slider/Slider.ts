@@ -5,5 +5,6 @@ export const sliderDefaultProps = {
     max: 100,
     value: 0,
     disabled: false,
-    step:1
+    step: 1,
+    direction: "horizontal",
 } as const satisfies SliderProps;

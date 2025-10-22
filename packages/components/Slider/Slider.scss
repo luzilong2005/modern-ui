@@ -22,13 +22,14 @@
 
     @each $s in $sizes {
         &.mu-slider--size-#{$s} {
-            .mu-slider__track {
-                height: var(--mu-slider-height-#{$s});
+            &.mu-slider--direction-horizontal {
+                .mu-slider__track {
+                    height: var(--mu-slider-height-#{$s});
+                }
+                .mu-slider__thumb {
+                    height: calc(var(--mu-slider-height-#{$s}) * 2);
+                }
             }
-            .mu-slider__thumb {
-                height: calc(var(--mu-slider-height-#{$s}) * 2);
-            }
-
             &.mu-slider--direction-vertical {
                 .mu-slider__track {
                     width: var(--mu-slider-height-#{$s});
@@ -52,6 +53,31 @@
         }
         .mu-slider__track::before {
             background-color: var(--mu-slider-bar-color-disabled);
+        }
+    }
+
+    &.mu-slider--direction-horizontal {
+        flex-direction: row;
+        width: 100%;
+        height: auto;
+
+        .mu-slider__track {
+            width: 100%;
+            height: auto;
+        }
+
+        .mu-slider__track::before {
+            top: 0;
+            left: 0;
+            width: calc(var(--mu-slider-percent) * 1%);
+            height: 100%;
+        }
+
+        .mu-slider__thumb {
+            top: 50%;
+            left: calc(var(--mu-slider-percent) * 1%);
+            bottom: auto;
+            transform: translate(-50%, -50%);
         }
     }
 
