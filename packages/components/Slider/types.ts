@@ -9,4 +9,5 @@ export interface SliderProps extends
         value?: number;
         size?: SliderSize;
         direction?: SliderDirection;
+        step?:number;
     };

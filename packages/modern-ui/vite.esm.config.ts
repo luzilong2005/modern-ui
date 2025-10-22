@@ -44,7 +44,6 @@ export default mergeConfig<UserConfig, UserConfig>(viteBaseConfig, {
                 manualChunks(id) {
                     for (const name of componentsNames) {
                         if (id.includes(`/packages/components/${name}`)) {
-                            console.log(name);
                             return `components/${name}`;
                         }
                     }

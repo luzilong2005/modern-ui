@@ -15,7 +15,8 @@
 
     @include initial;
     display: inline-flex;
-    align-self: center;
+    align-items: start;
+    justify-content: start;
     width: 100%;
     cursor: pointer;
 
@@ -27,6 +28,15 @@
             .mu-slider__thumb {
                 height: calc(var(--mu-slider-height-#{$s}) * 2);
             }
+
+            &.mu-slider--direction-vertical {
+                .mu-slider__track {
+                    width: var(--mu-slider-height-#{$s});
+                }
+                .mu-slider__thumb {
+                    width: calc(var(--mu-slider-height-#{$s}) * 2);
+                }
+            }
         }
     }
 
@@ -37,12 +47,32 @@
         .mu-slider__track::before {
             cursor: not-allowed;
         }
-
-        .mu-slider__thumb{
+        .mu-slider__thumb {
             border-color: var(--mu-slider-thumb-border-color-disabled);
         }
         .mu-slider__track::before {
             background-color: var(--mu-slider-bar-color-disabled);
+        }
+    }
+
+    &.mu-slider--direction-vertical {
+        flex-direction: column;
+        height: 100%;
+        width: auto;
+        .mu-slider__track {
+            height: 100%;
+        }
+        .mu-slider__track::before {
+            top: auto;
+            width: 100%;
+            height: calc(calc(100 - var(--mu-slider-percent)) * 1%);
+            bottom: 0;
+        }
+        .mu-slider__thumb {
+            top: auto;
+            left: 50%;
+            bottom: calc(calc(100 - var(--mu-slider-percent)) * 1%);
+            transform: translate(-50%, 50%);
         }
     }
 

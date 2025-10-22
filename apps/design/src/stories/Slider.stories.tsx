@@ -13,7 +13,7 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Preview: Story = {
+export const Basic: Story = {
     args: {
         value: 50,
     },
@@ -25,6 +25,28 @@ export const Preview: Story = {
                     return (
                         <Slider
                             {...args}
+                            size={size}
+                        />
+                    );
+                })}
+            </div>
+        );
+    },
+};
+
+export const Vertical: Story = {
+    args: {
+        value: 50,
+    },
+
+    render: (args) => {
+        return (
+            <div style={{ display: "flex", gap: "4rem", width: "400px", height: "400px" }}>
+                {SLIDER_SIZES.map((size) => {
+                    return (
+                        <Slider
+                            {...args}
+                            direction="vertical"
                             size={size}
                         />
                     );

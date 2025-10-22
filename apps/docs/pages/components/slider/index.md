@@ -17,6 +17,9 @@
 ## 自定义最大值
 <demo vue="./MaxValue.vue"/>
 
+## 步长控制
+<demo vue="./Step.vue"/>
+
 ## Props 属性
 | 属性名       | 类型                 | 默认值       | 说明                    |
 | --------- | ------------------ | --------- | --------------------- |
@@ -24,4 +27,5 @@
 | max       | `number`           | `100`     | 滑块最大值               |
 | value     | `number`           | `0`       | 滑块当前值（v-model绑定）    |
 | direction | `SliderDirection`  | `horizontal` | 滑块方向，可选值为 `horizontal`、`vertical` |
+| step      | `number`           | `1`       | 滑块步长，值必须是此值的倍数    |
 | disabled  | `boolean`          | `false`   | 是否禁用                 |

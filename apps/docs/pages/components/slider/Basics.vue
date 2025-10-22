@@ -2,7 +2,7 @@
     <div>
         <div class="mb-4">
             <p>当前值: {{ value }}</p>
-            <MuSlider v-model="value" />
+            <MuSlider v-model:value="value" />
         </div>
     </div>
 </template>

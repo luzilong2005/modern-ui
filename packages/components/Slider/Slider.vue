@@ -40,14 +40,22 @@ const style = computed(() => ({
     [`--mu-slider-percent`]: percent.value,
 }));
 
-const updateValue = (x: number) => {
-    if (props.disabled) return;
-    if (!trackRef.value || !thumbRef.value) return;
-    const { left, width } = trackRef.value.getBoundingClientRect();
-    const raw = Math.max((x - left) / width, 0);
-    modelValue.value = Math.min(raw * props.max, props.max);
+const updateValue = (x: number, y: number) => {
+    if (props.disabled || !trackRef.value || !thumbRef.value || props.step <= 0) return;
+    const clamp = (v: number, min: number, max: number) => Math.max(min, Math.min(max, v));
+    if (props.direction === "horizontal") {
+        const { left, width } = trackRef.value.getBoundingClientRect();
+        const raw = clamp((x - left) / width, 0, 1);
+        const val = clamp(Math.round(raw * props.max / props.step) * props.step, 0, props.max);
+        modelValue.value = val;
+    } else if (props.direction === "vertical") {
+        const { top, height } = trackRef.value.getBoundingClientRect();
+        const raw = clamp((y - top) / height, 0, 1);
+        const val = clamp(Math.round(raw * props.max / props.step) * props.step, 0, props.max);
+        modelValue.value = val;
+    }
 };
-const onTrackClick = (ev: MouseEvent) => updateValue(ev.clientX);
+const onTrackClick = (ev: MouseEvent) => updateValue(ev.clientX, ev.clientY);
 let dragging = false;
 const onMouseDown = (ev: MouseEvent) => {
     if (dragging) return;
@@ -57,7 +65,7 @@ const onMouseDown = (ev: MouseEvent) => {
     ev.preventDefault();
 };
 
-const onMouseMove = (ev: MouseEvent) => updateValue(ev.clientX);
+const onMouseMove = (ev: MouseEvent) => updateValue(ev.clientX, ev.clientY);
 const onMouseUp = () => {
     if (!dragging) return;
     dragging = false;

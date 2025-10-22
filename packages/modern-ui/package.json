@@ -38,7 +38,7 @@
         "build:esm": "rimraf dist/esm dist/types && vite build --config vite.esm.config.ts",
         "build:umd": "rimraf dist/umd && vite build --config vite.umd.config.ts",
         "clean": "rimraf dist",
-        "dev": "pnpm run build:esm --watch"
+        "dev": "vite build --config vite.esm.config.ts --watch"
     },
     "dependencies": {},
     "devDependencies": {
