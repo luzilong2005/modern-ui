@@ -2,15 +2,15 @@
     <div>
         <div class="mb-4">
             <p>最大值为10的滑块: {{ value1 }}</p>
-            <MuSlider v-model="value1" :max="10" />
+            <MuSlider v-model:value="value1" :max="10" />
         </div>
         <div class="mb-4">
             <p>最大值为50的滑块: {{ value2 }}</p>
-            <MuSlider v-model="value2" :max="50" />
+            <MuSlider v-model:value="value2" :max="50" />
         </div>
         <div>
             <p>最大值为200的滑块: {{ value3 }}</p>
-            <MuSlider v-model="value3" :max="200" />
+            <MuSlider v-model:value="value3" :max="200" />
         </div>
     </div>
 </template>
