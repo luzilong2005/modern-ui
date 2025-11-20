@@ -9,7 +9,8 @@
         "docs:build": " pnpm run --filter @modern-ui/docs build",
         "docs:dev": "pnpm run --filter @modern-ui/docs dev",
         "test-all": "vitest --ui",
-        "theme:build": "pnpm run --filter @modern-ui/theme build"
+        "theme:build": "pnpm run --filter @modern-ui/theme build",
+        "build":"run-s theme:build core:build docs:build"
     },
     "config": {
         "commitizen": {

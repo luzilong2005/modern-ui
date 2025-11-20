@@ -2,8 +2,7 @@ name: docs-site
 
 on:
     push:
-        branches:
-            - main
+        branches: [never]
         paths:
             - "apps/docs/**"
     pull_request:
