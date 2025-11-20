@@ -1,3 +1,4 @@
+import path from "node:path";
 import { defineConfig } from "vitepress";
 import { vitepressDemoPlugin } from "vitepress-demo-plugin";
 import { groupIconMdPlugin, groupIconVitePlugin } from "vitepress-plugin-group-icons";
@@ -9,7 +10,7 @@ import { groupIconMdPlugin, groupIconVitePlugin } from "vitepress-plugin-group-i
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
     base: "/",
-    outDir: "../dist",
+    outDir: path.resolve(__dirname, "../dist"),
     title: "Modern UI Docs",
     description: "使用 Vue + Vite + TypeScript 构建的组件库",
     themeConfig: {
